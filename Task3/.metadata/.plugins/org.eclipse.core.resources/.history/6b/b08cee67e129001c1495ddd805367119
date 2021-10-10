@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class SalaryList {
+	Employee employee;
+	List<Employee> employees;
+	
+	public SalaryList() {
+		this.employees = new ArrayList<>();
+	}
+	
+	public void setList(Employee employee) {
+		this.employees.add(employee);
+	}
+	
+	public void showList() {
+		for (Employee employee : employees) {
+			System.out.println(employee.getFirstName() + " " + employee.getLastName() + ". Salary: " + employee.getSalary());
+		}
+	}
+	
+}

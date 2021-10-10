@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+
+public class SalaryFunctions {
+	Employee employee;
+	ArrayList<Employee> employees;
+	
+	public SalaryFunctions() {
+		
+	}
+}
