@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\R\Desktop\IT\GIT\Attido\Task3\.metadata\.plugins\org.eclipse.jdt.core
+1642527143.index
+3915642582.index

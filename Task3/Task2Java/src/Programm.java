@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+
+public class Programm {
+	private static final int CONSIDERATION_LIMIT = 3000;
+	
+	public static ArrayList<Employee> updateSalary(ArrayList<Employee> employeesList, int k, int j, double d) {
+		for (int i = 0; i < employeesList.size(); i++) {
+			if(employeesList.get(i).getTaxableSalary() > k && employeesList.get(i).getTaxableSalary() < j && employeesList.get(i).getTaxableSalary() < CONSIDERATION_LIMIT) {
+				double newSalary = employeesList.get(i).getSalary() * d;
+				while((newSalary-employeesList.get(i).getSalary())>employeesList.get(i).getTax()) {
+					newSalary = employeesList.get(i).getSalary() * d;
+					d-=0.01;
+				}
+				employeesList.get(i).setSalary((int) newSalary);
+			}
+		}
+		return employeesList;
+	}
+	
+	public static void main(String[] args) {
+		
+		Employee employee1 = new Employee("John", "Johnson", 2000, 500);
+		Employee employee2 = new Employee("Bob", "Bobson", 4000, 200);
+		
+		//int taxEmployee1 = employee1.getTax(); 
+		//int taxEmployee2 = employee2.getTax(); 
+		
+		//System.out.println(taxEmployee1);
+		//System.out.println(taxEmployee2);
+		
+		ArrayList<Employee> employees = new ArrayList<Employee>(); 
+		employees.add(employee1);
+		employees.add(employee2);
+		
+
+		ArrayList<Employee> employeesUpdated = updateSalary(employees, 100, 5000, 1.1); 
+		
+		for (Employee employee : employeesUpdated) {
+			System.out.println(employee.getFirstName() + " " + employee.getLastName() + ". Salary: " + employee.getSalary());
+		}
+		
+		}
+
+
+
+}

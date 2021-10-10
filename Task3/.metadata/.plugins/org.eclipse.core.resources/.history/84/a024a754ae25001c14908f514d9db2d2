@@ -1,0 +1,14 @@
+
+public class Programm {
+
+	public static void main(String[] args) {
+		
+		Employee employee1 = new Employee("John", "Johnson", 2000, 500); 
+		
+		int tax = employee1.getTax(); 
+		
+		System.out.println(tax);
+
+	}
+
+}
